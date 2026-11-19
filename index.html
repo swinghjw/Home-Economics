@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>내가 만드는 나의 삶 | 기술·가정 수업자료실</title>
+<style>
+:root{--ink:#22304a;--muted:#64748b;--brand:#4d60bb;--bg:#f6f8fc;--line:#e1e7f2}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,'Malgun Gothic',sans-serif;color:var(--ink);line-height:1.6}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1150px;margin:auto;padding:0 22px}header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3}nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}.logo{font-weight:900;font-size:20px}.logo span{color:var(--brand)}.btn{border:1px solid var(--line);border-radius:11px;padding:10px 15px;background:white;color:var(--ink);font-weight:700}.btn.primary{background:var(--brand);color:white;border-color:var(--brand)}.btn.red{color:#b93847}.hero{border:1px solid #dce4fb;background:#ffe2ee;border-radius:25px;padding:40px;margin:30px 0 24px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:#5364af}.hero h1{font-size:clamp(27px,4vw,41px);line-height:1.3;margin:12px 0}.muted{color:var(--muted)}.join{padding:22px;background:white;border-radius:17px;border:1px solid var(--line);margin-bottom:25px}.join h2{margin:0 0 8px;font-size:19px}.join form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}input,textarea,select{padding:11px 12px;border:1px solid #d7deeb;border-radius:10px;background:white;max-width:100%;color:var(--ink)}.join input{flex:1;min-width:130px}.join button{min-width:125px}.error{color:#b33445;font-size:13px}.notice{font-size:13px;background:#fff9e9;border:1px solid #f0dfb3;padding:12px 15px;border-radius:12px}.resources{margin:30px 0 35px}.resources h2{margin:0 0 18px;font-size:21px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.art{height:126px;background:var(--shade);display:flex;align-items:center;justify-content:space-between;padding:18px}.art .emoji{font-size:61px}.art.has-image{height:auto;aspect-ratio:16/9;padding:0;background:#edf0fa;overflow:hidden}.art.has-image img{display:block;width:100%;height:100%;object-fit:cover}.tag{padding:5px 10px;border-radius:50px;background:#ffffffc9;font-size:12px;font-weight:800}.body{padding:18px;display:flex;flex-direction:column;flex:1}.body h3{font-size:18px;line-height:1.45;margin:8px 0}.body p{font-size:13px;color:var(--muted);flex:1;white-space:pre-line;overflow-wrap:anywhere}.meta{font-size:12px;color:#5463b4;font-weight:800}.empty{text-align:center;padding:52px;background:white;border-radius:18px;grid-column:1/-1}.foot{text-align:center;padding:45px 15px;color:#8290a5;font-size:12px}.overlay{position:fixed;inset:0;z-index:9;background:#1b284b99;padding:16px;display:flex;align-items:center;justify-content:center}.modal{background:white;border-radius:19px;padding:25px;width:min(730px,100%);max-height:94vh;overflow-y:auto}.modalhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.modalhead h2{margin:0}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:16px}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:700}.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%}.field textarea{min-height:90px}.manage{display:flex;gap:9px;justify-content:space-between;align-items:center;border:1px solid var(--line);padding:12px;border-radius:12px;margin:8px 0}.manage small{display:block;color:var(--muted)}.actions{display:flex;gap:6px;flex-shrink:0}.help{font-size:12px;color:var(--muted)}@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.wrap{padding:0 14px}.hero{padding:27px 22px}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.modal{padding:17px}.toolbar input{width:100%;min-width:0}.actions{flex-wrap:wrap}.manage{align-items:flex-start;flex-direction:column}}
+
+/* Pink monochrome refresh: solid colors, no gradients */
+:root{--ink:#4d3040;--muted:#806876;--brand:#cf6592;--bg:#fff5f9;--line:#f0d5e1}
+body{background:#fff5f9}
+header{background:#fff;border-bottom:1px solid #f1dce5;box-shadow:0 2px 12px #b7658712}
+nav{min-height:76px}.logo{font-size:20px;letter-spacing:-.5px}.logo span{color:#c85487}
+.btn{border-radius:12px;border-color:#f0d2e0;transition:transform .18s,box-shadow .18s,background .18s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 15px #bd719021}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #f4a9c8;outline-offset:2px}
+.btn.primary{background:#ce638f;border-color:#ce638f;color:white;box-shadow:0 4px 12px #ce638f2c}
+.btn.primary:hover{background:#b94e7c}
+.hero{position:relative;overflow:hidden;border:1px solid #f4cadb;border-radius:26px;padding:52px 48px;margin:32px 0 28px;background:#ffe2ee;box-shadow:0 10px 27px #bd719018}
+.hero:before,.hero:after{display:none;content:none}
+.eyebrow{display:inline-block;border-radius:99px;background:#fff4f9;padding:7px 13px;font-size:11px;letter-spacing:1.5px;color:#b24f7d}
+.hero h1{color:#6e3453;font-size:clamp(32px,4.5vw,50px);font-weight:900;letter-spacing:-1.5px;line-height:1.3;margin:17px 0 11px}
+.hero .muted{font-size:clamp(14px,1.75vw,17px);color:#7d5269;margin:0;max-width:690px;line-height:1.85}
+.resources{margin:34px 0 60px}.resources h2{font-size:22px;color:#75405c;margin-bottom:20px;letter-spacing:-.5px}.resources h2:before{content:none}
+.grid{gap:20px}
+.card{border:1px solid #f1dae4;border-radius:22px;background:white;box-shadow:0 7px 20px #c17f9c19;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 13px 30px #c17f9c2b}
+.art{height:145px;background:#f8dce8}.art .emoji{font-size:64px}
+.art.has-image{aspect-ratio:16/9;background:#f8e5ed}
+.art.has-image img{transition:transform .25s}.card:hover .art.has-image img{transform:scale(1.025)}
+.body{padding:20px 20px 22px}.meta{font-size:12px;color:#a84874;background:#fff0f6;align-self:flex-start;padding:5px 11px;border-radius:30px}
+.body h3{color:#61384e;font-size:19px;margin:13px 0 8px}.body p{font-size:14px;line-height:1.7;color:#806b76;margin:0 0 19px;min-height:43px}
+.body .row .btn{padding:11px 20px;border-radius:12px}
+.foot{color:#987688;font-size:13px;padding:40px 15px 50px;border-top:1px solid #f1dce5}
+.overlay{background:#48243896}.modal{border-radius:22px;box-shadow:0 22px 60px #502c3e3b;border:1px solid #f3dce6}
+.modalhead h2{color:#783e5c}.manage{border-radius:14px;background:#fff;border-color:#f0dce5}.notice{background:#fff2f7;border-color:#efcbd9}
+@media(max-width:600px){nav{min-height:68px}.logo{font-size:17px}.hero{padding:36px 24px;border-radius:22px;margin:23px 0 25px}.hero h1{font-size:clamp(30px,8vw,38px);letter-spacing:-1px}.grid{gap:16px}.body{padding:17px}.card{border-radius:19px}.resources h2{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.btn,.card,.art.has-image img{transition:none}.btn:hover,.card:hover,.card:hover .art.has-image img{transform:none}}
+/* White page, retaining the colorful title banner */
+:root{--bg:#ffffff}
+html,body,main{background:#ffffff}
+.resources,.resources .grid,.foot{background:#ffffff}
+
+/* Colorful classroom refresh — pastel pink with high-contrast dark text */
+:root{--ink:#342738;--muted:#5d5260;--brand:#ad326b;--bg:#fff;--line:#eadfe6}
+html,body,main{background:#fff;color:var(--ink)}
+header{background:#fff;border-bottom:1px solid #f4e1e9;box-shadow:0 3px 20px rgba(122,54,89,.06)}
+nav{min-height:78px}.logo{color:#382739;font-weight:900;letter-spacing:-.4px}.logo span{color:#aa346b}
+#adminOpen{background:#fff7fa;border-color:#f0cddd;color:#713451;padding:10px 17px}
+#adminOpen:hover{background:#ffecf3}
+.hero{isolation:isolate;background:#ffe2ee;border:1px solid #f8c5d9;min-height:236px;border-radius:30px;box-shadow:0 13px 30px rgba(187,94,132,.11);padding:52px 56px;margin:32px 0 24px}
+.hero:before,.hero:after{display:block;content:'';position:absolute;pointer-events:none;z-index:-1;border-radius:50%}
+.hero:before{width:205px;height:205px;right:-44px;top:-78px;background:#f7b8d0;opacity:.54}
+.hero:after{width:110px;height:110px;right:137px;bottom:-63px;background:#fff0a8;opacity:.58}
+.hero .eyebrow{background:#fffafc;border:1px solid #f4cada;color:#783550;font-size:11px;letter-spacing:1.3px;padding:7px 14px}
+.hero h1{color:#402839;font-size:clamp(34px,4.8vw,53px);font-weight:900;line-height:1.25;letter-spacing:-1.7px;position:relative;z-index:1}
+.hero .muted{color:#593b4d;font-size:clamp(15px,1.7vw,17px);line-height:1.8;font-weight:550;position:relative;z-index:1}
+.resources{margin:31px 0 66px}.resources h2{color:#342738;font-size:24px;letter-spacing:-.7px;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.resources h2:before{content:'✦';display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;flex:none;border-radius:13px;background:#ffe7f0;color:#a5366a;font-size:22px}
+.grid{gap:22px}
+.card{background:#fff;border:1px solid #eedee6;border-radius:24px;box-shadow:0 6px 24px rgba(72,42,60,.07);transition:transform .2s,box-shadow .2s;position:relative}
+.card:hover{transform:translateY(-5px);box-shadow:0 17px 34px rgba(104,52,80,.13)}
+.card:nth-child(4n+1){border-top:5px solid #f5b4cc}
+.card:nth-child(4n+2){border-top:5px solid #b5e1d0}
+.card:nth-child(4n+3){border-top:5px solid #dfc8fb}
+.card:nth-child(4n){border-top:5px solid #ffe096}
+.art{height:155px;background:#ffe8f1;position:relative}.card:nth-child(4n+2) .art:not(.has-image){background:#e0f5ec}.card:nth-child(4n+3) .art:not(.has-image){background:#f0e7ff}.card:nth-child(4n) .art:not(.has-image){background:#fff3cb}
+.art.has-image{aspect-ratio:16/9;background:#fff1f6}
+.body{padding:21px 21px 23px}
+.meta{background:#fff0f6;color:#833450;border:1px solid #f6dce6;font-size:12px;line-height:1.45;padding:5px 11px}
+.card:nth-child(4n+2) .meta{background:#e9f7f0;border-color:#d5ecdf;color:#245a46}
+.card:nth-child(4n+3) .meta{background:#f3edff;border-color:#e6dafb;color:#584384}
+.card:nth-child(4n) .meta{background:#fff6dc;border-color:#f5e7bb;color:#75561a}
+.body h3{color:#322839;font-size:19px;font-weight:850;letter-spacing:-.45px}
+.body p{color:#655966;font-size:14px;line-height:1.75}
+.btn{font-weight:750;color:#413042;border-color:#e9d7e1}
+.btn.primary{background:#b93f77;border-color:#b93f77;color:#fff;box-shadow:0 5px 11px rgba(161,53,101,.14)}
+.btn.primary:hover{background:#96315f;border-color:#96315f}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #b3447a;outline-offset:3px}
+.foot{background:white;color:#635663;border-top:1px solid #f0e5eb;padding:38px 15px 50px}
+.modal{background:#fff;border:1px solid #f0d9e3}.modalhead h2{color:#3b2b3d}.field{color:#423441}input,textarea,select{color:#342738;border-color:#d8cbd5}.help,.manage small{color:#655966}
+@media(max-width:600px){nav{min-height:68px}.hero{padding:37px 24px;min-height:220px;border-radius:24px;margin-top:22px}.hero:before{width:135px;height:135px;right:-65px;top:-45px}.hero:after{width:75px;height:75px;right:36px;bottom:-37px}.hero h1{font-size:clamp(31px,8vw,40px);letter-spacing:-1.2px}.resources h2{font-size:22px}.grid{gap:17px}.card{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+
+/* 2026 classroom pastel edition: playful details, clean white content */
+:root{--brand:#ad326b;--ink:#302838;--muted:#574f5b;--line:#e9dce4;--bg:#fff}
+html,body,main{background:#fff!important}
+body{font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1110px}
+header{background:#fff;border-bottom:1px solid #f3e4eb;box-shadow:0 4px 20px rgba(99,45,75,.035)}
+.logo{font-size:19px;letter-spacing:-.55px;display:inline-flex;align-items:center;gap:3px}
+#adminOpen{border-radius:999px;color:#73304f;border:1px solid #efd0dc;background:#fff8fb;font-weight:800}
+.hero{background:#ffe0ed;min-height:250px;padding:54px 60px;margin:34px 0 20px;border:1px solid #f5c3d6;border-radius:30px;box-shadow:0 9px 30px rgba(150,66,103,.08);position:relative;isolation:isolate}
+.hero:before{display:block;content:'';position:absolute;width:205px;height:205px;right:-39px;top:-68px;border-radius:47% 53% 61% 39%;background:#f8bdd1;opacity:.7;z-index:-1;transform:rotate(-20deg)}
+.hero:after{display:block;content:'';position:absolute;width:110px;height:110px;right:147px;bottom:-45px;border-radius:25px;transform:rotate(24deg);background:#fff3bb;opacity:.78;z-index:-1}
+.hero .eyebrow{display:inline-flex;align-items:center;background:#fff8fb;border:1px solid #f6cfdf;color:#87395c;font-size:11px;font-weight:900;letter-spacing:1.3px;padding:7px 13px;border-radius:99px}
+.hero .eyebrow:before{content:'✿';color:#b04474;font-size:14px;margin-right:8px}
+.hero h1{color:#3b2937;font-size:clamp(34px,5vw,55px);letter-spacing:-2px;line-height:1.22;margin:20px 0 16px;max-width:820px;text-wrap:balance}
+.hero .muted{color:#523b4c;font-size:16px;line-height:1.85;max-width:710px;font-weight:600}
+.resources{margin:34px 0 72px;background:#fff}
+.resources h2{font-size:24px;line-height:1.4;color:#302838;margin-bottom:23px;gap:11px}
+.resources h2:before{content:'✦';width:39px;height:39px;border-radius:12px;background:#ffebf2;color:#a63b72;box-shadow:inset 0 0 0 1px #f6dce6;font-size:21px}
+.grid{gap:24px}
+.card{background:#fff;border:1px solid #eadde5;border-radius:22px;box-shadow:0 7px 25px rgba(58,37,54,.075);overflow:hidden}
+.card:nth-child(4n+1){border-top:5px solid #eea8c7}
+.card:nth-child(4n+2){border-top:5px solid #a9dcc7}
+.card:nth-child(4n+3){border-top:5px solid #ceb8f1}
+.card:nth-child(4n){border-top:5px solid #f6d485}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 29px rgba(71,41,60,.13)}
+.art.has-image{aspect-ratio:16/9;background:#fff3f8}
+.art.has-image img{width:100%;height:100%;object-fit:cover}
+.body{padding:22px 22px 24px;gap:0}
+.meta{font-weight:800;font-size:12px;color:#74334e;background:#fff0f5;border:1px solid #f5d6e3;padding:5px 11px;border-radius:99px}
+.card:nth-child(4n+2) .meta{color:#275d49;background:#eaf8f0;border-color:#d4eddf}
+.card:nth-child(4n+3) .meta{color:#574385;background:#f1ecfc;border-color:#e3d9f7}
+.card:nth-child(4n) .meta{color:#755619;background:#fff5d8;border-color:#f4e4b4}
+.body h3{font-size:19px;color:#312735;font-weight:850;letter-spacing:-.5px;line-height:1.5;margin:13px 0 8px}
+.body p{color:#5b525e;font-size:14px;line-height:1.85;margin:0 0 22px}
+.body .row{margin-top:auto}
+.btn.primary{color:#fff;background:#a93670;border-color:#a93670;border-radius:11px;font-weight:800;box-shadow:0 4px 12px rgba(152,48,101,.15)}
+.btn.primary:hover{background:#8d265b;border-color:#8d265b}
+.btn{transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a93670;outline-offset:3px}
+.foot{background:#fff;color:#5f5260;border-top:1px solid #f0e5ec;padding:36px 15px 45px}
+.modal{box-shadow:0 25px 80px rgba(40,19,32,.24)}
+@media(max-width:850px){.grid{gap:18px}.hero{padding:44px 36px}}
+@media(max-width:600px){.wrap{padding:0 16px}nav{min-height:68px}.logo{font-size:16px}.hero{min-height:210px;padding:35px 24px;margin:24px 0 23px;border-radius:23px}.hero h1{font-size:clamp(32px,8.5vw,42px);letter-spacing:-1.2px}.hero .muted{font-size:14px}.hero:before{width:135px;height:135px;right:-69px;top:-45px}.hero:after{width:65px;height:65px;right:34px;bottom:-34px}.resources{margin:28px 0 52px}.resources h2{font-size:22px}.grid{gap:18px}.body{padding:18px 18px 21px}}
+@media(prefers-reduced-motion:reduce){.btn,.card,.art.has-image img{transition:none!important}.btn:hover,.card:hover,.card:hover .art.has-image img{transform:none!important}}
+
+/* Pastel classroom dashboard: white main content and pink sidebar */
+body{background:#fff!important;color:#302838}
+.app-shell{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh;background:#fff}
+.sidebar{background:#fff0f6;border-right:1px solid #f5d9e6;padding:31px 16px 24px;display:flex;flex-direction:column;gap:18px;position:sticky;top:0;height:100vh;overflow:auto}
+.side-brand{display:flex;align-items:center;gap:11px;padding:7px 12px 24px;font-weight:750;font-size:17px;line-height:1.35;color:#442d3c}.side-brand strong{color:#a62f65;font-size:21px}.brand-symbol{background:#f9c8df;color:#922a5b;border-radius:15px;font-size:25px;display:grid;place-items:center;width:47px;height:47px;flex-shrink:0}
+.side-caption{color:#9c6783;letter-spacing:2px;font-size:10px;font-weight:900;margin:4px 13px}
+.side-menus{display:flex;flex-direction:column;gap:9px}
+.side-link{width:100%;border:1px solid transparent;border-radius:15px;padding:14px 13px;background:transparent;color:#493444;font:inherit;font-weight:800;font-size:14px;display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;transition:.18s}.side-link span:first-child{font-size:20px}.side-link span:nth-child(2){flex:1}.side-link b{font-size:11px;color:#946d80;background:#ffffffbf;border-radius:100px;min-width:22px;text-align:center;padding:4px}.side-link:hover{background:#ffe0ec}.side-link.active{background:#be4c83;color:#fff;box-shadow:0 7px 17px #b9467f30}.side-link.active b{color:#8e2e5a;background:#fff3f8}
+.side-bottom{margin-top:auto;background:#fff;border:1px solid #f5d8e6;border-radius:18px;padding:15px;display:flex;gap:10px;align-items:center;color:#765064}.side-bottom span{font-size:24px}.side-bottom small{font-weight:800}
+.app-main{min-width:0;background:#fff;display:flex;flex-direction:column;min-height:100vh}
+.topbar{min-height:78px;padding:16px clamp(20px,4vw,52px);display:flex;justify-content:space-between;align-items:center;gap:14px;background:white;box-shadow:none;border-bottom:1px solid #f3e6eb;position:relative;z-index:1}
+.topbar-left{display:flex;align-items:center;gap:9px;font-weight:850;color:#4b3644;font-size:15px}.top-dot{height:12px;width:12px;background:#f6b8d1;border-radius:50%;box-shadow:0 0 0 5px #ffecf4}.top-star{color:#e5aa45}
+.app-main .wrap{max-width:1100px;width:100%;padding:0 clamp(20px,3.7vw,50px);margin:0 auto;box-sizing:border-box}
+.app-main .hero{margin:32px 0 38px;min-height:235px;border-radius:27px;overflow:hidden}
+.hero-decor{position:absolute;right:55px;bottom:24px;font-size:42px;letter-spacing:10px;color:#c25b8e;opacity:.62;transform:rotate(-11deg)}.hero-decor span{color:#e4ae38}
+.section-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:22px}.section-top h2{margin:0}.section-top p{color:#6a5a66;font-size:13px;margin:0}.resources{margin:0 0 68px}
+.app-main .foot{margin-top:auto;max-width:none;text-align:center}
+.admin-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.admin-caption{margin-top:18px}.manage{gap:12px;flex-wrap:wrap}.manage-title{min-width:170px;flex:1}.manage-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.mini-label{font-size:12px;color:#5b4c58;font-weight:800;display:flex;align-items:center;gap:5px}.mini-label select{max-width:145px;padding:9px;font-size:13px}.menu-manage-row{background:#fff;border:1px solid #eddce5;border-radius:14px;padding:12px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;gap:9px}.menu-name{font-weight:800;color:#413042}.menu-manage-row .actions{display:flex;gap:5px;flex-wrap:wrap}.btn.tiny{padding:7px 10px;font-size:12px}.add-menu-form{margin-top:18px;border-top:1px solid #f2e2e9;padding-top:18px;display:flex;align-items:end;flex-wrap:wrap;gap:10px}.add-menu-form .field{flex:1;min-width:110px}.add-menu-form .field:first-child{max-width:120px}
+@media(max-width:900px){.app-shell{grid-template-columns:205px minmax(0,1fr)}.sidebar{padding:23px 12px}.side-brand{font-size:14px}.side-brand strong{font-size:17px}.topbar{padding:13px 22px}.app-main .wrap{padding:0 24px}.app-main .hero{padding:38px 32px}.hero-decor{right:25px;bottom:10px;font-size:30px}}
+@media(max-width:650px){.app-shell{display:block}.sidebar{height:auto;position:static;padding:12px 15px 10px;border-right:0;border-bottom:1px solid #f1d9e5;gap:9px}.side-brand{padding:0;font-size:13px}.side-brand strong{font-size:15px}.brand-symbol{width:34px;height:34px;font-size:19px;border-radius:10px}.side-caption,.side-bottom{display:none}.side-menus{flex-direction:row;overflow-x:auto;gap:7px;scrollbar-width:thin;padding:6px 0}.side-link{width:auto;flex:none;gap:6px;padding:10px 11px;border-radius:11px;white-space:nowrap;font-size:12px}.side-link span:first-child{font-size:15px}.side-link b{font-size:10px}.topbar{min-height:59px;padding:12px 16px}.topbar-left{font-size:12px}.topbar #adminOpen{padding:9px 12px;font-size:12px}.app-main .wrap{padding:0 16px}.app-main .hero{margin:20px 0 27px;padding:33px 24px;min-height:200px}.hero-decor{font-size:22px;right:6px;bottom:4px}.section-top p{display:none}.add-menu-form .field:first-child{max-width:110px}}
+
+/* Multicolor pastel classroom — clean white workspace, readable dark text */
+:root{--ink:#293246;--muted:#596478;--brand:#7358aa;--line:#e4e8ef;--bg:#fff}
+html,body,.app-shell,.app-main,main,.app-main .wrap,.resources,.foot{background:#fff!important;color:var(--ink)}
+.sidebar{background:#f8f6ff;border-right:1px solid #e8e5f3;box-shadow:5px 0 28px rgba(83,74,124,.035)}
+.side-brand{color:#293246}.side-brand strong{color:#6753a5}
+.brand-symbol{background:#e7dcff;color:#5f4a9a;box-shadow:inset 0 0 0 1px #dbcefa}
+.side-caption{color:#746c99}
+.side-menus{gap:11px}
+.side-link{color:#334057;border:1px solid transparent;border-radius:15px;transition:transform .16s,background .16s,box-shadow .16s}
+.side-link:nth-child(5n+1){background:#fff0f6;border-color:#f6dbe8;color:#803d5e}
+.side-link:nth-child(5n+2){background:#e6f6ee;border-color:#d0ebde;color:#285a48}
+.side-link:nth-child(5n+3){background:#f0ebff;border-color:#e2d9fb;color:#584880}
+.side-link:nth-child(5n+4){background:#fff5da;border-color:#f7e8b8;color:#70551a}
+.side-link:nth-child(5n){background:#e6f3ff;border-color:#d3e6f8;color:#345b80}
+.side-link:hover{transform:translateX(3px);box-shadow:0 4px 12px #404b6915}
+.side-link.active{background:#514b80!important;color:#fff!important;border-color:#514b80!important;box-shadow:0 7px 17px rgba(81,75,128,.2)}
+.side-link b{color:#415169;background:#ffffffb8}
+.side-link.active b{color:#514b80;background:#fff}
+.side-bottom{background:#fff;border-color:#e5e2f1;color:#536178}
+.topbar{border-bottom:1px solid #e9ebf1;background:#fff}.topbar-left{color:#334057}
+.top-dot{background:#adcfef;box-shadow:0 0 0 5px #e8f3ff}.top-star{color:#e0a449}
+#adminOpen{color:#514b80;background:#f1edff;border-color:#ded5f5}
+#adminOpen:hover{background:#e6ddff}
+.app-main .hero{background:linear-gradient(114deg,#ffe6f0 0%,#fff0e5 29%,#fff7d9 52%,#e4f5ed 75%,#e7edff 100%);border:1px solid #ecdfeb;box-shadow:0 12px 30px rgba(76,81,117,.085)}
+.hero:before{background:#cddcff;opacity:.65}.hero:after{background:#c1e9d9;opacity:.65}
+.hero .eyebrow{background:#fffdfce8;border-color:#e4deec;color:#635087}.hero .eyebrow:before{color:#d1709a}
+.hero h1{color:#2a3449}.hero .muted{color:#495365}.hero-decor{color:#b080ca}.hero-decor span{color:#d59e32}
+.resources h2{color:#293246}.resources h2:before{background:#eaf1ff;color:#6276ae;box-shadow:inset 0 0 0 1px #dbe5fa}
+.section-top p{color:#606b7a}
+.card{border-color:#e5e8ee;box-shadow:0 7px 24px rgba(52,65,89,.065)}
+.card:hover{box-shadow:0 14px 32px rgba(49,64,90,.12)}
+.card:nth-child(5n+1){border-top:5px solid #f2b7d0}
+.card:nth-child(5n+2){border-top:5px solid #a5dcc6}
+.card:nth-child(5n+3){border-top:5px solid #cbbaf0}
+.card:nth-child(5n+4){border-top:5px solid #f6d58b}
+.card:nth-child(5n){border-top:5px solid #afcfef}
+.card:nth-child(5n+1) .art:not(.has-image){background:#ffeaf2}
+.card:nth-child(5n+2) .art:not(.has-image){background:#e5f6ed}
+.card:nth-child(5n+3) .art:not(.has-image){background:#f0ecff}
+.card:nth-child(5n+4) .art:not(.has-image){background:#fff6da}
+.card:nth-child(5n) .art:not(.has-image){background:#e6f3ff}
+.card:nth-child(5n+1) .meta{background:#ffedf5;border-color:#f7d4e5;color:#853d62}
+.card:nth-child(5n+2) .meta{background:#e8f7ef;border-color:#d0ebdd;color:#275d48}
+.card:nth-child(5n+3) .meta{background:#f0eaff;border-color:#ded5f5;color:#5a4a88}
+.card:nth-child(5n+4) .meta{background:#fff6df;border-color:#f2e2b5;color:#70531c}
+.card:nth-child(5n) .meta{background:#e8f3ff;border-color:#d4e6f8;color:#355f83}
+.body h3{color:#283346}.body p{color:#536075}
+.btn.primary{background:#5b548e;border-color:#5b548e;color:#fff;box-shadow:0 5px 13px #5b548e26}
+.btn.primary:hover{background:#48416f;border-color:#48416f}
+.btn{border-color:#dfe4ed;color:#334057}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #9980d2;outline-offset:3px}
+.foot{border-top:1px solid #e8ebf1;color:#616b79}
+.modalhead h2,.menu-name{color:#293246}.manage,.menu-manage-row{border-color:#e4e8ef}
+.overlay{background:#26354c9c}.modal{border-color:#e2e7ef}
+@media(max-width:650px){.sidebar{background:#f8f6ff;border-bottom:1px solid #e6e3f1}.side-link:hover{transform:none}}
+
+
+/* 제목 배경의 장식 도형 및 꽃/별 모양 제거 */
+.hero::before,.hero::after,.hero .eyebrow::before{content:none!important;display:none!important}
+.hero-decor{display:none!important}
+</style></head><body>
+<div class="app-shell">
+<aside class="sidebar" aria-label="수업자료 메뉴">
+ <div class="side-brand"><span class="brand-symbol">✿</span><span>기술·가정<br><strong>수업자료실</strong></span></div>
+ <div class="side-caption">CLASSROOM</div>
+ <nav id="sidebarMenus" class="side-menus" aria-label="자료 분류"></nav>
+ <div class="side-bottom"><span>🌷</span><small>오늘도 즐거운 배움!</small></div>
+</aside>
+<div class="app-main">
+ <header class="topbar"><div class="topbar-left"><span class="top-dot"></span> 내가 만드는 나의 삶 <span class="top-star">✦</span></div><button class="btn" id="adminOpen">⚙️ 교사용 자료관리</button></header>
+ <main class="wrap">
+  <section class="hero"><div class="eyebrow">TECHNOLOGY · HOME ECONOMICS</div><h1 id="siteTitle">내가 만드는 나의 삶</h1><p class="muted" id="siteIntro">게임과 활동지, 다양한 기술·가정 수업자료를 한곳에서 만나보세요.</p></section>
+  <section aria-label="수업자료" class="resources"><div class="section-top"><h2 id="sectionTitle">✨ 전체 자료</h2><p>원하는 자료를 선택해 바로 시작해 보세요.</p></div><div class="grid" id="cards"></div></section>
+ </main>
+<footer class="foot"><span id="footerTitle">내가 만드는 나의 삶</span> · 기술·가정 수업자료실<br>제작자: 한지원 · GitHub Pages</footer><div id="modalRoot"></div>
+<script id="initialData" type="application/json">[]</script>
+<script id="siteSettings" type="application/json">{"title":"내가 만드는 나의 삶","intro":"게임과 활동지, 다양한 기술·가정 수업자료를 한곳에서 만나보세요."}</script>
+<script id="menuData" type="application/json">[{"id":"games","name":"온라인 게임","icon":"🎮"},{"id":"worksheets","name":"활동지","icon":"📝"},{"id":"materials","name":"수업자료","icon":"📚"}]</script>
+<script>
+(()=>{'use strict';
+const $=s=>document.querySelector(s), root=$('#modalRoot');
+const initial=JSON.parse($('#initialData').textContent), initialSettings=JSON.parse($('#siteSettings').textContent);
+const defaults=[{id:'games',name:'온라인 게임',icon:'🎮'},{id:'worksheets',name:'활동지',icon:'📝'},{id:'materials',name:'수업자료',icon:'📚'}];
+const KEY='tech_home_site_edit_v1', SETTINGS_KEY='tech_home_site_settings_v1', MENU_KEY='tech_home_site_menus_v1';
+const stored=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
+let data=stored(KEY,initial).filter(x=>x.id!=='game-1'),siteSettings={...initialSettings,...stored(SETTINGS_KEY,{})},menus=stored(MENU_KEY,JSON.parse($('#menuData').textContent));
+if(!Array.isArray(menus)||!menus.length)menus=structuredClone(defaults);
+const menuFor=x=>x.menuId&&menus.some(m=>m.id===x.menuId)?x.menuId:(x.type==='온라인 게임'?'games':x.type==='활동지'?'worksheets':'materials');
+data=data.map(x=>({...x,menuId:menuFor(x)}));
+let current='all',unlocked=false,editing=null;
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function safeUrl(s){try{const u=new URL(s,location.href);return ['https:','http:'].includes(u.protocol)}catch{return false}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function saveSettings(){localStorage.setItem(SETTINGS_KEY,JSON.stringify(siteSettings));render()}
+function saveMenus(){localStorage.setItem(MENU_KEY,JSON.stringify(menus));render()}
+function render(){
+ $('#siteTitle').textContent=siteSettings.title;$('#siteIntro').textContent=siteSettings.intro;$('#footerTitle').textContent=siteSettings.title;document.title=siteSettings.title+' | 기술·가정 수업자료실';
+ const publicData=data.filter(x=>x.visible!==false);
+ $('#sidebarMenus').innerHTML=`<button class="side-link ${current==='all'?'active':''}" data-menu="all"><span>✨</span><span>전체 자료</span><b>${publicData.length}</b></button>`+menus.map(m=>`<button class="side-link ${current===m.id?'active':''}" data-menu="${esc(m.id)}"><span>${esc(m.icon||'📁')}</span><span>${esc(m.name)}</span><b>${publicData.filter(x=>menuFor(x)===m.id).length}</b></button>`).join('');
+ $('#sidebarMenus').querySelectorAll('[data-menu]').forEach(b=>b.onclick=()=>{current=b.dataset.menu;render();document.querySelector('.resources').scrollIntoView({behavior:'smooth',block:'start'})});
+ const selected=menus.find(m=>m.id===current);$('#sectionTitle').textContent=selected?`${selected.icon||'📁'} ${selected.name}`:'✨ 전체 자료';
+ const shown=publicData.filter(x=>current==='all'||menuFor(x)===current);
+ $('#cards').innerHTML=shown.map((x,i)=>{
+ const thumb=x.thumbnailUrl||'';const colors=['#ffe6f1','#e3f7ee','#f0eaff','#fff3d8'];
+ const art=thumb?`<div class="art has-image"><img src="${esc(thumb)}" alt="${esc(x.title)} 썸네일" loading="lazy"></div>`:`<div class="art" style="background:${colors[i%colors.length]}"><span class="emoji">${esc(x.type==='온라인 게임'?'🎮':x.type==='활동지'?'📝':'📚')}</span></div>`;
+ return `<article class="card">${art}<div class="body"><div class="meta">${esc(x.grade||'전체 학년')} · ${esc(x.type||'자료')}</div><h3>${esc(x.title)}</h3><p>${esc(x.description||'')}</p><div class="row"><button class="btn primary" data-open="${esc(x.id)}">${x.type==='온라인 게임'?'게임 참여하기':'자료 열기'} →</button></div></div></article>`}).join('')||'<div class="empty">이 메뉴에 공개된 자료가 없습니다.</div>';
+ $('#cards').querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{const x=data.find(y=>y.id===b.dataset.open);if(x&&safeUrl(x.url))window.open(new URL(x.url,location.href).href,'_blank','noopener,noreferrer');else alert('자료 주소를 확인해주세요.')});
+}
+function close(){root.innerHTML=''}
+function modal(title,body){root.innerHTML=`<div class="overlay"><div class="modal" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="modalhead"><h2>${esc(title)}</h2><button class="btn" id="closeModal">닫기 ✕</button></div>${body}</div></div>`;$('#closeModal').onclick=close;root.querySelector('.overlay').onclick=e=>{if(e.target.classList.contains('overlay'))close()}}
+$('#adminOpen').onclick=()=>{if(unlocked)return panel();modal('교사용 자료 관리',`<p class="help">관리자 비밀번호를 입력하세요.</p><form id="pinForm" class="row"><input id="pin" type="password" placeholder="비밀번호" required><button class="btn primary">입장</button></form><p id="pinError" class="error"></p>`);$('#pinForm').onsubmit=e=>{e.preventDefault();if($('#pin').value!=='0000'){$('#pinError').textContent='비밀번호를 확인하세요.';return}unlocked=true;panel()}}
+function menuOptions(value){return menus.map(m=>`<option value="${esc(m.id)}" ${m.id===value?'selected':''}>${esc(m.icon||'📁')} ${esc(m.name)}</option>`).join('')}
+function panel(){modal('교사용 자료관리',`<p class="notice">변경 내용은 현재 브라우저에 저장됩니다. 학생에게 공개하려면 <b>HTML 내보내기</b> 후 GitHub의 index.html을 교체하세요.</p><div class="admin-actions"><button class="btn primary" id="editSite">✎ 제목·소개 수정</button><button class="btn" id="manageMenus">☷ 메뉴 관리</button><button class="btn primary" id="addResource">＋ 자료 추가</button><button class="btn" id="exportPage">⬇ HTML 내보내기</button><button class="btn" id="resetAll">초기화</button></div><p class="help admin-caption">자료의 '이동할 메뉴'를 바꾸면 다른 메뉴로 바로 옮길 수 있어요.</p><div id="manageList"></div>`);
+ $('#editSite').onclick=editSite;$('#manageMenus').onclick=manageMenus;$('#addResource').onclick=()=>resourceForm();$('#exportPage').onclick=exportHTML;
+ $('#resetAll').onclick=()=>{if(confirm('모든 로컬 수정 내용을 초기화할까요?')){data=structuredClone(initial).map(x=>({...x,menuId:menuFor(x)}));siteSettings={...initialSettings};menus=structuredClone(defaults);localStorage.removeItem(SETTINGS_KEY);localStorage.removeItem(MENU_KEY);localStorage.removeItem(KEY);render();panel()}};
+ $('#manageList').innerHTML=data.map(x=>`<div class="manage"><div class="manage-title"><strong>${esc(x.title)}</strong><small>${esc(x.type)} · ${x.visible===false?'비공개':'공개'}</small></div><div class="manage-controls"><label class="mini-label">이동할 메뉴 <select data-move="${esc(x.id)}">${menuOptions(menuFor(x))}</select></label><button class="btn" data-edit="${esc(x.id)}">수정</button><button class="btn red" data-del="${esc(x.id)}">삭제</button></div></div>`).join('')||'<p>등록된 자료가 없습니다.</p>';
+ root.querySelectorAll('[data-move]').forEach(s=>s.onchange=()=>{const x=data.find(x=>x.id===s.dataset.move);if(x){x.menuId=s.value;save();panel()}});
+ root.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>resourceForm(data.find(x=>x.id===b.dataset.edit)));
+ root.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('자료를 삭제하시겠습니까?')){data=data.filter(x=>x.id!==b.dataset.del);save();panel()}});
+}
+function editSite(){modal('홈페이지 제목·소개 수정',`<form class="formgrid" id="siteForm"><label class="field full">홈페이지 제목<input id="sTitle" maxlength="100" required value="${esc(siteSettings.title)}"></label><label class="field full">소개 문구<textarea id="sIntro" maxlength="500">${esc(siteSettings.intro)}</textarea></label><div class="row full"><button class="btn" type="button" id="back">취소</button><button class="btn primary">저장하기</button></div></form>`);$('#back').onclick=panel;$('#siteForm').onsubmit=e=>{e.preventDefault();if(!$('#sTitle').value.trim())return;siteSettings={title:$('#sTitle').value.trim(),intro:$('#sIntro').value.trim()};saveSettings();panel()}}
+function manageMenus(){modal('메뉴 관리',`<p class="help">메뉴 이름·아이콘을 변경하거나 순서를 조정할 수 있습니다. 메뉴를 삭제하면 그 메뉴에 있던 자료는 다른 메뉴로 옮겨집니다.</p><div id="menuManager"></div><form id="menuForm" class="add-menu-form"><label class="field">메뉴 아이콘<input id="newIcon" maxlength="4" placeholder="📁" value="📁"></label><label class="field">새 메뉴 이름<input id="newName" maxlength="28" placeholder="예: 주생활 게임" required></label><button class="btn primary" type="submit">＋ 메뉴 추가</button></form><div class="row" style="margin-top:18px"><button class="btn" id="back">자료관리로 돌아가기</button></div>`);$('#back').onclick=panel;$('#menuForm').onsubmit=e=>{e.preventDefault();const name=$('#newName').value.trim();if(!name)return;menus.push({id:'m'+Date.now(),name,icon:$('#newIcon').value.trim()||'📁'});saveMenus();manageMenus()};drawMenuManager()}
+function drawMenuManager(){const holder=$('#menuManager');if(!holder)return;holder.innerHTML=menus.map((m,i)=>`<div class="menu-manage-row"><span class="menu-name">${esc(m.icon)} ${esc(m.name)}</span><div class="actions"><button class="btn tiny" data-up="${esc(m.id)}" ${i===0?'disabled':''} title="위로">↑</button><button class="btn tiny" data-down="${esc(m.id)}" ${i===menus.length-1?'disabled':''} title="아래로">↓</button><button class="btn tiny" data-rename="${esc(m.id)}">수정</button><button class="btn tiny red" data-remove="${esc(m.id)}" ${menus.length===1?'disabled':''}>삭제</button></div></div>`).join('');
+ holder.querySelectorAll('[data-up],[data-down]').forEach(b=>b.onclick=()=>{const id=b.dataset.up||b.dataset.down,i=menus.findIndex(m=>m.id===id),j=i+(b.dataset.up?-1:1);if(j<0||j>=menus.length)return;[menus[i],menus[j]]=[menus[j],menus[i]];saveMenus();drawMenuManager()});
+ holder.querySelectorAll('[data-rename]').forEach(b=>b.onclick=()=>{const m=menus.find(m=>m.id===b.dataset.rename);const name=prompt('메뉴 이름을 입력하세요.',m.name);if(name===null)return;if(!name.trim())return alert('메뉴 이름을 입력하세요.');const icon=prompt('메뉴 아이콘(이모지)을 입력하세요.',m.icon);if(icon===null)return;m.name=name.trim().slice(0,28);m.icon=icon.trim().slice(0,4)||'📁';saveMenus();drawMenuManager()});
+ holder.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{const index=menus.findIndex(m=>m.id===b.dataset.remove),m=menus[index];if(menus.length<2)return;const target=menus.find(x=>x.id!==m.id);if(!confirm(`'${m.name}' 메뉴를 삭제하고 그 안의 자료를 '${target.name}' 메뉴로 이동할까요?`))return;data.forEach(x=>{if(menuFor(x)===m.id)x.menuId=target.id});menus.splice(index,1);if(current===m.id)current='all';save();saveMenus();drawMenuManager()});
+}
+function resourceForm(x){editing=x?.id||null;modal(x?'자료 수정':'새 자료 추가',`<form id="resourceForm" class="formgrid"><label class="field full">자료명 *<input id="rTitle" maxlength="100" required value="${esc(x?.title)}"></label><label class="field">메뉴<select id="rMenu">${menuOptions(x?menuFor(x):(current==='all'?menus[0].id:current))}</select></label><label class="field">자료 유형<select id="rType">${['온라인 게임','활동지','수업자료','퀴즈','영상','기타'].map(t=>`<option ${x?.type===t?'selected':''}>${t}</option>`).join('')}</select></label><label class="field">대상 학년<select id="rGrade">${['중학교','고등학교','전체 학년'].map(t=>`<option ${(x?.grade||'중학교')===t?'selected':''}>${t}</option>`).join('')}</select></label><label class="field full">자료 설명<textarea id="rDesc">${esc(x?.description)}</textarea></label><label class="field full">썸네일 이미지 주소 (선택)<input id="rThumb" value="${esc(x?.thumbnailUrl)}" placeholder="https://..."></label><label class="field full">게임·자료 URL<input id="rUrl" value="${esc(x?.url)}" placeholder="https://..." required></label><label class="row full"><input type="checkbox" id="rVisible" ${x?.visible===false?'':'checked'}> 학생에게 공개</label><div id="formError" class="error full"></div><div class="row full"><button type="button" class="btn" id="back">취소</button><button class="btn primary">저장하기</button></div></form>`);$('#back').onclick=panel;$('#resourceForm').onsubmit=e=>{e.preventDefault();const obj={...x,id:editing||('r'+Date.now()),title:$('#rTitle').value.trim(),menuId:$('#rMenu').value,type:$('#rType').value,grade:$('#rGrade').value,description:$('#rDesc').value.trim(),thumbnailUrl:$('#rThumb').value.trim(),url:$('#rUrl').value.trim(),visible:$('#rVisible').checked};
+ if(!safeUrl(obj.url)){ $('#formError').textContent='올바른 게임·자료 URL을 입력해주세요.';return}
+ if(obj.thumbnailUrl&&!safeUrl(obj.thumbnailUrl)){$('#formError').textContent='썸네일은 올바른 이미지 URL을 입력해주세요.';return}
+ if(editing)data=data.map(y=>y.id===editing?obj:y);else data.push(obj);save();panel()}}
+function exportHTML(){const doc=document.documentElement.cloneNode(true);const stringify=o=>JSON.stringify(o).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026');doc.querySelector('#initialData').textContent=stringify(data);doc.querySelector('#siteSettings').textContent=stringify(siteSettings);doc.querySelector('#menuData').textContent=stringify(menus);doc.querySelector('#modalRoot').innerHTML='';const blob=new Blob(['<!doctype html>\n'+doc.outerHTML],{type:'text/html;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='index.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);alert('수정된 index.html을 저장했습니다. GitHub 저장소의 파일과 교체하세요.')}
+render();
+})();
+
+</script></body></html>
